@@ -44,6 +44,7 @@ class Solution1:
     #
     #
     # O(logn) Space
+    # Recursive Solution
     def search(self, nums: List[int], target: int) -> int:
         def BinarySearch(nums, left, right, target):
             # base case
@@ -63,8 +64,7 @@ class Solution1:
 
 # O(log(n)) time
 # O(1) space
-
-
+# Iterative Solution
 class Solution2:
     def search(self, nums: List[int], target: int) -> int:
         length = len(nums)
