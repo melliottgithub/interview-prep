@@ -1,7 +1,6 @@
 from typing import List
 
 
-class Solution1:
     # [1, 2, 3, 4, 5, 6]
     #  l
     #                 r
@@ -45,6 +44,7 @@ class Solution1:
     #
     # O(logn) Space
     # Recursive Solution
+class Solution1:
     def search(self, nums: List[int], target: int) -> int:
         def BinarySearch(nums, left, right, target):
             # base case
