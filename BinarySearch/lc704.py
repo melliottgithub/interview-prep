@@ -35,7 +35,6 @@ from typing import List
 #                                                 [1    2     3     4              5     6    7     8]          3
 #
 #
-
 # Using Master Theorem T(n) = O(logn)
 #
 #  Assuming already sorted
@@ -86,6 +85,8 @@ class Solution2:
         return -1
 
 # ------------------------------------------------------------------------
+
+
 class Solution3:
     def search(self, nums: List[int], target: int) -> int:
         i = bisect.bisect_left(nums, target)
