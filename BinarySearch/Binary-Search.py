@@ -1,3 +1,4 @@
+import bisect
 from typing import List
 
 # [1, 2, 3, 4, 5, 6]
@@ -83,3 +84,12 @@ class Solution2:
             else:
                 right = mid - 1
         return -1
+
+# ------------------------------------------------------------------------
+class Solution3:
+    def search(self, nums: List[int], target: int) -> int:
+        i = bisect.bisect_left(nums, target)
+        if i == len(nums) or nums[i] != target:
+            return -1
+        else:
+            return i
