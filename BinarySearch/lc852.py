@@ -17,6 +17,8 @@ class Solution(object):
                     [0,0,1,2,0]  
                          ^ 
     '''
+    # runtime: O(logn) n is the length of the array
+    # space: O(1)
     def peakIndexInMountainArray(self, arr):
         """
         :type arr: List[int]
