@@ -1,0 +1,33 @@
+@startuml Folders Data
+
+entity Drive <<table>> {
+    id [PK]
+    --
+    owner_id [Index]
+    created_at
+    updated_at
+}
+
+entity Folder <<table>> {
+    id [PK]
+    drive_id [PK]
+    --
+    parent_id [Index]
+    name
+    created_at
+    updated_at
+}
+
+entity File <<table>> {
+    folder_id [PK]
+    object_id [PK]
+    --
+    name [Index]
+    created_at
+    updated_at
+}
+
+Folder "*" -right-> Drive
+File "*" -up-> Folder
+
+@enduml
