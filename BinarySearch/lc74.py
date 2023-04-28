@@ -39,7 +39,7 @@ class Solution(object):
                       
         start, end = 0, (rows * columns) - 1
         while start <= end:
-            mid = start + (end - start) /2
+            mid = start + (end - start) //2
             if matrix[mid / columns][mid % columns] == target:
                 return True
             elif matrix[mid / columns][mid % columns] > target:
