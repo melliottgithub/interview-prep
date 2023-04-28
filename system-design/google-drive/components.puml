@@ -1,0 +1,18 @@
+@startuml Overview
+
+component storage
+component fileformats <<library>>
+component folders
+component search
+component shares
+component sync
+component auth
+
+search ..> fileformats
+search ..> storage
+folders ..> storage
+sync ..> storage
+shares ..> storage
+auth ..> storage
+
+@enduml

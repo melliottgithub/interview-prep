@@ -1,0 +1,27 @@
+@startuml Folders Domain
+hide empty members
+
+interface Service {
+    addFolder()
+    addFile()
+    removeFolder()
+    removeFile()
+    renameFolder()
+    renameFile()
+    moveFolder()
+    moveFile()
+}
+
+entity Drive
+entity Folder
+entity File
+
+interface Owner
+interface Object
+
+Drive -> Owner: GoogleAccount
+Folder "*" --> Drive : has
+File "*" --> Folder : contains
+File --> Object : references
+
+@enduml
