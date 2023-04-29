@@ -7,10 +7,11 @@ function twoNumberSum(array, targetSum) {
     //Pseudocode
   
     //code
+    // O(n) time | O(n) space
     if(array.length < 2) return []
-    const hash = {}
+    const hash = {} //  n space
     
-    for(let i = 0; i < array.length; i++) {
+    for(let i = 0; i < array.length; i++) { //n time
       let findSum = targetSum - array[i]
       if(findSum in hash) return [findSum, array[i]]
       else hash[array[i]] = findSum

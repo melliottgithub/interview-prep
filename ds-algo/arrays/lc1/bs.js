@@ -3,6 +3,7 @@ function twoNumberSum(arr, targetSum) {
   const sortedArr = sortAscending(arr);
 
   // Loop through the sorted array and look for a pair of numbers that add up to the target sum
+  // O(nlogn) time | O(1) space
   for (let i = 0; i < sortedArr.length; i++) {
     const complement = targetSum - sortedArr[i];
     const complementIndex = binarySearch(sortedArr, complement);
@@ -35,11 +36,10 @@ function binarySearch(arr, x) {
 }
 
 function sortAscending(arr) {
-  return arr.sort(function (a, b) {
+  return arr.sort(function (a, b) { // nlogn time
     return a - b;
   });
 }
-
 
 // Test case 1: Empty input array
 const input1 = [];
@@ -100,7 +100,7 @@ console.log(`Test case 8: expected ${expectedOutput8}, got ${actualOutput8}`);
 // Test case 9: Array with all zeroes
 const input9 = [0, 0, 0, 0, 0];
 const targetSum9 = 0;
-const expectedOutput9 = [0,0];
+const expectedOutput9 = [0, 0];
 const actualOutput9 = twoNumberSum(input9, targetSum9);
 console.log(`Test case 9: expected ${expectedOutput9}, got ${actualOutput9}`);
 
@@ -109,7 +109,6 @@ const input10 = [2, 3, 4, 7, 5];
 const targetSum10 = 8;
 const expectedOutput10 = [3, 5];
 const actualOutput10 = twoNumberSum(input10, targetSum10);
-console.log(`Test case 10: expected ${expectedOutput10}, got ${actualOutput10}`);
-
-  
-
+console.log(
+  `Test case 10: expected ${expectedOutput10}, got ${actualOutput10}`
+);
