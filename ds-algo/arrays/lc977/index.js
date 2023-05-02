@@ -1,4 +1,8 @@
-function sortedSquaredArray(array) {
+function sortedSquaredArray(nums) {
+  /**
+   * @param {number[]} nums
+   * @return {number[]}
+   */
   // Write your code here.
   //  [ -10, 1, 2, 3, 4 ,5 ,6 ,8 , 9]
   //               s
@@ -10,28 +14,22 @@ function sortedSquaredArray(array) {
   //                                     ^  <=====
   //
   //code
-  if (array.length < 2) return array;
-  let [s, e] = [0, array.length - 1];
-  const sortedArr = Array.from({ length: array.length }); // O(n) space complexity
+  if (nums.length < 2) return nums[0] * nums[0];
+  let [s, e] = [0, nums.length - 1];
+  const sortedArr = Array.from({ length: nums.length }); // O(n) space complexity
 
-  for (let i = array.length - 1; i >= 0; i--) { // O(n) time complexity
-    const [leftValue, rightValue] = [array[s], array[e]];
-    let el = sortedArr[i];
-
-    if (Math.abs(leftValue) > Math.abs(rightValue)) {
-      s++;
-      sortedArr[i] = leftValue;
-    } else {
-      e--;
-      sortedArr[i] = rightValue;
-    }
-    sortedArr[i] = squared(sortedArr[i]);
+  for (let i = nums.length - 1; i >= 0; i--) { // O(n) time complexity
+    let squaringNum = 0;
+    const [leftValue, rightValue] = [nums[s], nums[e]];
+    squaringNum =
+      Math.abs(leftValue) > Math.abs(rightValue) ? nums[s++] : nums[e--];
+    sortedArr[i] = squared(squaringNum);
   }
 
   return sortedArr;
 }
 function squared(num) {
-  return num * num;
+  return Math.pow(num, 2);
 }
 
 // Test case 1
