@@ -1,8 +1,8 @@
-function sortedSquaredArray(nums) {
-  /**
-   * @param {number[]} nums
-   * @return {number[]}
-   */
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var sortedSquares = function (nums) {
   // Write your code here.
   //  [ -10, 1, 2, 3, 4 ,5 ,6 ,8 , 9]
   //               s
@@ -14,22 +14,20 @@ function sortedSquaredArray(nums) {
   //                                     ^  <=====
   //
   //code
-  if (nums.length < 2) return nums[0] * nums[0];
   let [s, e] = [0, nums.length - 1];
   const sortedArr = Array.from({ length: nums.length }); // O(n) space complexity
 
   for (let i = nums.length - 1; i >= 0; i--) { // O(n) time complexity
     let squaringNum = 0;
-    const [leftValue, rightValue] = [nums[s], nums[e]];
-    squaringNum =
-      Math.abs(leftValue) > Math.abs(rightValue) ? nums[s++] : nums[e--];
+    const [leftValue, rightValue] = [nums[s], nums[e]]
+    squaringNum = Math.abs(leftValue) > Math.abs(rightValue) ? nums[s++] : nums[e--];
     sortedArr[i] = squared(squaringNum);
   }
 
   return sortedArr;
 }
 function squared(num) {
-  return Math.pow(num, 2);
+  return num * num;
 }
 
 // Test case 1
