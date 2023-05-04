@@ -1,0 +1,12 @@
+@startuml Overview
+
+component object_service as "Object Service"
+component key_value as "Key Value Store"
+component local_cache as "Local Cache"
+component async_replication as "Async Replication"
+
+object_service ..> key_value
+object_service ..> local_cache
+async_replication ..> key_value
+
+@enduml
