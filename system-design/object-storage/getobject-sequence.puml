@@ -1,0 +1,18 @@
+@startuml
+participant Client
+participant RESTAPI
+participant ObjectService
+database KVStore
+participant StorageService
+database Filesystem
+
+Client -> RESTAPI: GET /bucket/object
+RESTAPI -> ObjectService: Get Object
+ObjectService -> ObjectService: Look up object location in hash table
+ObjectService -> StorageService: Request object parts
+StorageService -> Filesystem: Read object parts
+ObjectService -> ObjectService: Decode object parts
+ObjectService -> KVStore: Retrieve object metadata
+ObjectService -> RESTAPI: Object data and metadata
+RESTAPI -> Client: Object data and metadata
+@enduml

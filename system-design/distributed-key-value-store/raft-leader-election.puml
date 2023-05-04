@@ -1,0 +1,17 @@
+@startuml raft-leader-election
+control ElectionTimeoutEvent
+participant Node1
+participant Node2
+participant Node3
+
+ElectionTimeoutEvent -> Node1: New leader election
+activate Node1
+Node1 -> Node2: Request vote
+activate Node2
+Node2 -> Node3: Request vote
+activate Node3
+Node3 -> Node2: Vote granted
+deactivate Node3
+Node2 -> Node1: Vote granted
+deactivate Node2
+@enduml
