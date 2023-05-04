@@ -1,0 +1,26 @@
+@startuml leader-follower-replication
+participant Client
+participant Leader
+participant Follower1
+participant Follower2
+
+Client -> Leader: Request
+activate Leader
+Leader -> Leader: Append Entry
+alt Consensus reached
+Leader -> Follower1: Append Entries RPC
+activate Follower1
+Follower1 -> Follower1: Append Entry
+Follower1 -> Leader: Append Entries response
+deactivate Follower1
+Leader -> Follower2: Append Entries RPC
+activate Follower2
+Follower2 -> Follower2: Append Entry
+Follower2 -> Leader: Append Entries response
+deactivate Follower2
+else Consensus not reached
+Leader -> Leader: Retry
+end
+Leader -> Client: Response
+deactivate Leader
+@enduml
