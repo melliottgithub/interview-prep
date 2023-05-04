@@ -46,6 +46,5 @@ function isPalindrome(string) {
   
       return str[i] === str[j] ? pal(str, i + 1) : false
     }
-      
     return pal(string, 0)
   }
