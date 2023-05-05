@@ -1,8 +1,8 @@
 function isPalindrome(string) {
     // Write your code here.
     //    a b c d c b a
-    //    <
-    //                >
+    //      <
+    //              >
     // 
     //   while left < right
     //   if(leftVal === rightVal)
