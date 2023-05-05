@@ -1,8 +1,8 @@
 function isPalindrome(string) {
     // Write your code here.
     //    a b c d c b a
-    //    <
-    //                >
+    //      <
+    //              >
     // 
     //   while left < right
     //   if(leftVal === rightVal)
@@ -46,6 +46,5 @@ function isPalindrome(string) {
   
       return str[i] === str[j] ? pal(str, i + 1) : false
     }
-      
     return pal(string, 0)
   }
