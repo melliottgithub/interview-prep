@@ -25,13 +25,17 @@ function runLengthEncoding(str) {
                  
     */
     let count = 1;
-    let encodedStr = '';
+    let currentChar = str[0];
+    let compactedStr = currentChar;
+    // let encodedStr = '';
   
     for (let i = 1; i <= str.length; i++){
         
       if(count === 9 || str.length === i || str[i - 1] !== str[i]){
-        encodedStr += (count + str[i-1])
-        count = 1
+        compactedStr += count.toString();
+        currentChar = str[i];
+        compactedStr += currentChar;
+        count = 1;
       } else count++
     }
     
