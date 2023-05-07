@@ -28,19 +28,19 @@ function generateDocument(characters, document) {
     return false;
   }
 
-  const charFreq = new Map();
-  for (let char of characters) {
+  const charFreq = new Map(); // O(n) space where n is the number of unique characters in the characters string
+  for (let char of characters) { // O(n) time where n is the number of characters in the characters string
     const freq = charFreq.get(char) || 0;
     charFreq.set(char, freq + 1);
   }
-  for (let char of document) {
+  for (let char of document) { // O(m) time where m is the number of characters in the document string
     if (!charFreq.has(char) || charFreq.get(char) === 0) {
       return false;
     }
     charFreq.set(char, charFreq.get(char) - 1);
   }
-  return true;
-}
+  return true; // O(n + m) time and O(n) space
+} 
 /* 
 const table = {}
 

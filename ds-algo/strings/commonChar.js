@@ -25,8 +25,8 @@ function commonCharacters(strings) {
     const table = {}
     const commonChar = []
   
-    for (let str of strings) {
-      const uniqueChars = new Set(str)
+    for (let str of strings) { // O(n) time
+      const uniqueChars = new Set(str) // O(n) space
       for (let char of uniqueChars) {
         if(char in table) table[char] += 1
         else table[char] = 1

@@ -37,7 +37,7 @@ var merge = function (nums1, m, nums2, n) {
     let len = m + n - 1
     let [arr1Idx, arr2Idx] = [len1, len2]
 
-    while (arr1Idx >= 0 && arr2Idx >= 0) {
+    while (arr1Idx >= 0 && arr2Idx >= 0) { // O(n) time and O(1) space where n is the number of elements in the array
         const [leftVal, rightVal] = [nums1[arr1Idx], nums2[arr2Idx]]
         leftVal <= rightVal ? nums1[len--] = nums2[arr2Idx--] : nums1[len--] = [nums1[arr1Idx--]]
     }

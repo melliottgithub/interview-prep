@@ -18,7 +18,7 @@ var reverseString = function (s) {
     const len = s.length - 1
     let [l, r] = [0, len]
 
-    function reverse(l, r, arr) {
+    function reverse(l, r, arr) { // O(n) time and O(n) space where n is the number of characters in the string
         if (l >= r) return arr
         else swap(l, r, arr)
         return reverse(l + 1, r - 1, arr)
