@@ -37,7 +37,7 @@ function firstNonRepeatingCharacter(string) {
     for (const index in string) {
       if(freqMap.get(string[index]) === 1) return +index
     }
-    return -1;
+    return -1; // O(n) time and O(1) space where n is the length of the string
   }
   
   
