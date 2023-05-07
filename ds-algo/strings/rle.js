@@ -26,20 +26,21 @@ function runLengthEncoding(str) {
     */
     let count = 1;
     let currentChar = str[0];
-    let compactedStr = currentChar;
-    // let encodedStr = '';
+    let compactedStr = currentChar; // O(n) space
+    //let encodedStr = ''; // O(n) space
   
-    for (let i = 1; i <= str.length; i++){
+    for (let i = 1; i <= str.length; i++){ // O(n) time
         
       if(count === 9 || str.length === i || str[i - 1] !== str[i]){
         compactedStr += count.toString();
         currentChar = str[i];
         compactedStr += currentChar;
+        // encodedStr += (count +str[i - 1])
         count = 1;
       } else count++
     }
     
-    return encodedStr;
+    return compactedStr;
   }
   
   
