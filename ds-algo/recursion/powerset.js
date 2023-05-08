@@ -11,7 +11,7 @@
                                                      ''                                         0
                                             ''                      a                           1
                                         ''      b               a       ab                      2
-                                    ''    c   b   bc          a   ac   ab  abc                  3    O(2^n) where n is the length of the input O(2^n + n) space
+                                    ''    c   b   bc          a   ac   ab  abc                  3    O(2^n) where n is the length of the input O(2^n * n) space
                 pseudo code
                 result = []
                 helper(build, depth)
