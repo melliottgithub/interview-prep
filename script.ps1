@@ -19,7 +19,7 @@ git add .
 git commit -m $message
 
 # Push changes to the branch
-$confirm = Read-Host "Enter 'yes' to confirm push to $branch"
+$confirm = Read-Host "Enter 'y' to confirm push to $branch"
 if ($confirm -eq "y") {
   git push origin $branch
 } else {
